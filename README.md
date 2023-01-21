@@ -1,6 +1,6 @@
 <div align='center'><h1>CN-Editor</h3></div><br>
 
-**A simple recording and clip editing script for fivem using R* Native Editor.**
+**A simple recording and clip editing script for fivem using Rockstar's Editor.**
 
 ## Preview
 - Recording Menu :
