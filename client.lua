@@ -11,23 +11,24 @@ local EditorRecording = false
 function RageUI.PoolMenus:MenuRockstarEditor()
     RockstarEditorMenu:IsVisible(function(Items)
         if EditorRecording then
-            Items:AddButton(Translate["StopAndSave"], nil, { IsDisabled = false, RightLabel = "" }, function(onSelected)
+            Items:AddButton(Translation["StopAndSave"], nil, { IsDisabled = false, RightLabel = "" }, function(onSelected)
                 if (onSelected) then
                     StopRecordingAndSaveClip()
+                    notification(Translation["ClipSave"])
                     EditorRecording = not(EditorRecording)
                     Items:CloseAllMenu()
                 end
             end)
-            Items:AddButton(Translate["StopAndDiscard"], nil, { IsDisabled = false, RightLabel = "" }, function(onSelected)
+            Items:AddButton(Translation["StopAndDiscard"], nil, { IsDisabled = false, RightLabel = "" }, function(onSelected)
                 if (onSelected) then
                     StopRecordingAndDiscardClip()
-                    notification("~p~Editeur~s~\nL'enregistrement à bien été ~r~supprimé~s~ !")
+                    notification(Translation["ClipDiscard"])
                     EditorRecording = not(EditorRecording)
                     Items:CloseAllMenu()
                 end
             end)
         elseif EditorRecording == false then
-            Items:AddButton(Translate["StartRecording"], nil, { IsDisabled = false, RightLabel = "→" }, function(onSelected)
+            Items:AddButton(Translation["StartRecording"], nil, { IsDisabled = false, RightLabel = "→" }, function(onSelected)
                 if (onSelected) then
                     EditorRecording = not(EditorRecording)
                     StartRecording(1)
@@ -35,7 +36,7 @@ function RageUI.PoolMenus:MenuRockstarEditor()
                 end
             end)
             Items:AddLine()
-            Items:AddButton(Translate["Editor"], Translate["EditYourClip"], { IsDisabled = false, RightLabel = "" }, function(onSelected)
+            Items:AddButton(Translation["Editor"], Translation["EditYourClip"], { IsDisabled = false, RightLabel = "" }, function(onSelected)
                 if (onSelected) then
                     NetworkSessionLeaveSinglePlayer()
                     ActivateRockstarEditor()
@@ -51,6 +52,6 @@ RegisterCommand("editor",function()
     if not(IsEntityDead(PlayerPedId())) then
         RageUI.Visible(RockstarEditorMenu, not RageUI.Visible(RockstarEditorMenu))
     else
-        notification(Translate["CantOpen"])
+        notification(Translation["CantOpen"])
     end
 end)
