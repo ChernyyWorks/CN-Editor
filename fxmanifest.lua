@@ -1,6 +1,5 @@
 fx_version 'adamant'
 game 'gta5'
-lua54 'yes'
 
 client_script {
     -- RageUIx | https://github.com/Florian-1801/RageUIx
