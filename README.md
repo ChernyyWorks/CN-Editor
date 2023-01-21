@@ -4,7 +4,9 @@
 
 ## Preview
 - Recording Menu :
+
 ![image](https://user-images.githubusercontent.com/92865037/213888692-5bbcd182-20d7-4646-9396-8c7e2fd7e171.png)
+
 - Editing :
 ![image](https://user-images.githubusercontent.com/92865037/213888705-f3e5eee3-00a1-4e24-970d-2814bf04deb1.png)
 
