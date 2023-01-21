@@ -4,7 +4,7 @@ function notification(text)
     EndTextCommandThefeedPostTicker(0,1)
 end
 
-local RockstarEditorMenu = RageUI.CreateMenu("", "Options", nil, nil, "rageui_banner", "banner_editor") --"TeapotBanner"
+local RockstarEditorMenu = RageUI.CreateMenu("", "Options", nil, nil, "rageui_banner", "banner_editor")
 RockstarEditorMenu.EnableMouse = false;
 local EditorRecording = false
 
