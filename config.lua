@@ -8,3 +8,5 @@ Translation = {
     ["EditYourClip"] = "Edit your saved clips !",
     ["CantOpen"] = "You can't open the editor being dead.",
 }
+
+AllowKeymapping = true

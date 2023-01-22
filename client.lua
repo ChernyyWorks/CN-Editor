@@ -55,3 +55,15 @@ RegisterCommand("editor",function()
         notification(Translation["CantOpen"])
     end
 end)
+
+if AllowKeymapping then
+    if EditorRecording then
+        -- Stop and Save
+        StopRecordingAndSaveClip()
+        notification(Translation["ClipSave"])
+        EditorRecording = not(EditorRecording)
+    else
+        EditorRecording = not(EditorRecording)
+        StartRecording(1)
+    end
+end
