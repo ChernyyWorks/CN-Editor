@@ -10,3 +10,5 @@ Translation = {
 }
 
 AllowKeymapping = true
+
+oxlib = true
