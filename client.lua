@@ -60,7 +60,7 @@ if AllowKeymapping then
     if oxlib then
         local keybind = lib.addKeybind({
             name = 'cn_editor:recording',
-            description = 'Recording',
+            description = 'Recording Clip',
             defaultKey = '',
             onReleased = function(self)
                 if EditorRecording then
@@ -74,5 +74,18 @@ if AllowKeymapping then
                 end
             end,
         })
+    else
+        RegisterCommand("cnrecording",function()
+            if EditorRecording then
+                -- Stop and Save
+                StopRecordingAndSaveClip()
+                notification(Translation["ClipSave"])
+                EditorRecording = not(EditorRecording)
+            else
+                EditorRecording = not(EditorRecording)
+                StartRecording(1)
+            end
+        end)
+        RegisterKeyMapping("cnrecording", "Recording Clip", "keyboard", "")
     end
 end
